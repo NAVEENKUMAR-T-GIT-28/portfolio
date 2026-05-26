@@ -6,8 +6,8 @@
     "description": "Real-time quiz platform with OTP authentication, live leaderboards, scalable multi-user sessions.",
     "overview": "QuizPulse is a full-stack real-time quiz platform built for engaging multi-user quiz sessions. It includes OTP-based authentication, live leaderboard updates, and scalable deployment using Docker. The system focuses on responsiveness, performance, and smooth real-time interactions.",
     "images": {
-      "light": "images/projects/QuizPulse-light.png",
-      "dark": "images/projects/QuizPulse-dark.png"
+      "light": "/images/projects/QuizPulse-light.png",
+      "dark": "/images/projects/QuizPulse-dark.png"
     },
     "tech": ["React", "Node.js", "MongoDB", "Docker"],
     "techStack": [
@@ -40,8 +40,8 @@
     "description": "A premium dark-themed developer portfolio with JSON architecture and Framer Motion effects.",
     "overview": "A fully responsive developer portfolio designed with a premium glassmorphism aesthetic. Built using reusable JSON-driven architecture, smooth Framer Motion animations, and a modular component structure to create a modern user experience.",
     "images": {
-      "light": "images/projects/portfolio-light.png",
-      "dark": "images/projects/portfolio-dark.png"
+      "light": "/images/projects/portfolio-light.png",
+      "dark": "/images/projects/portfolio-dark.png"
     },
     "tech": ["React", "TypeScript", "Tailwind CSS"],
     "techStack": [
