@@ -33,7 +33,7 @@
     "title": "Python for Data Science",
     "issuer": "NPTEL · IIT",
     "issuerShort": "NPTEL",
-    "date": "2024",
+    "date": "2025",
     "status": "completed",
     "score":"87",
     "total":"100",
@@ -43,18 +43,5 @@
     "skills": ["Python", "OOP", "Data Structures", "Scripting"],
     "color": "teal",
     "badge": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-  },
-  {
-    "id": 4,
-    "title": "Database Management Systems",
-    "issuer": "NPTEL · IIT",
-    "issuerShort": "NPTEL",
-    "date": "2024",
-    "status": "completed",
-    "credential": "",
-    "description": "Comprehensive study of relational databases, SQL, normalisation, transactions, and query optimisation.",
-    "skills": ["SQL", "MySQL", "PostgreSQL", "DBMS", "Normalisation"],
-    "color": "amber",
-    "badge": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
   }
 ]
