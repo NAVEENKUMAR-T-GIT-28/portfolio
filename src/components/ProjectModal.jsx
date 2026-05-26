@@ -40,7 +40,7 @@ export default function ProjectModal({ project, onClose }) {
   const hasLive = Boolean(project.liveUrl);
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-12">
+    <div className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-6 md:p-12">
       {/* Backdrop */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -57,7 +57,7 @@ export default function ProjectModal({ project, onClose }) {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-        className="relative w-full max-w-4xl max-h-full overflow-y-auto bg-white/80 dark:bg-zinc-900/80 backdrop-blur-2xl rounded-2xl md:rounded-[2rem] border border-zinc-200 dark:border-zinc-800 shadow-[0_10px_40px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.5)] z-10 flex flex-col [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        className="relative w-full max-w-4xl max-h-full overflow-y-auto bg-white/80 dark:bg-zinc-900/80 backdrop-blur-2xl rounded-2xl md:rounded-4xlborder border-zinc-200 dark:border-zinc-800 shadow-[0_10px_40px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.5)] z-10 flex flex-col [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-none]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -69,7 +69,7 @@ export default function ProjectModal({ project, onClose }) {
         </button>
 
         {/* Top Section: Banner */}
-        <div className="relative w-full aspect-video md:aspect-[21/9] bg-gradient-to-b from-zinc-100 via-white to-zinc-50 dark:from-zinc-950 dark:via-black dark:to-zinc-900 overflow-hidden border-b border-zinc-200 dark:border-white/5 shrink-0">
+        <div className="relative w-full aspect-video md:aspect-21/9 bg-linear-to-b from-zinc-100 via-white to-zinc-50 dark:from-zinc-950 dark:via-black dark:to-zinc-900 overflow-hidden border-b border-zinc-200 dark:border-white/5 shrink-0">
           {projectImage && (
             <img 
               src={projectImage} 
@@ -77,7 +77,7 @@ export default function ProjectModal({ project, onClose }) {
               className="w-full h-full object-cover object-top"
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent dark:from-[#0a0a0a] dark:via-[#0a0a0a]/60 dark:to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-white via-white/60 to-transparent dark:from-[#0a0a0a] dark:via-[#0a0a0a]/60 dark:to-transparent" />
           
           <div className="absolute bottom-0 left-0 w-full p-6 md:p-10 flex flex-col justify-end">
             <motion.h2 

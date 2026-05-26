@@ -1,41 +1,9 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Sparkles, Code2 } from "lucide-react";
+import { Sparkles, Code2, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { PageShell } from "@/components/PageShell";
 import personal from "@/data/personal.json";
 import skills from "@/data/skills.json";
-import education from "@/data/education.json";
-
-function EduCard({ edu, index }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="card card-hover p-6 flex gap-5"
-    >
-      <div className="flex flex-col items-center gap-2 shrink-0">
-        <div className="timeline-dot" />
-        {index < education.length - 1 && (
-          <div className="w-px flex-1 bg-linear-to-b from-primary/40 to-transparent" />
-        )}
-      </div>
-      <div className="pb-4 flex-1 min-w-0">
-        <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
-          <h3
-            className="font-bold text-base leading-tight"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            {edu.degree}
-          </h3>
-          <span className="badge badge-neutral shrink-0">{edu.date}</span>
-        </div>
-        <p className="text-primary font-semibold text-sm mb-1">{edu.institution}</p>
-        <p className="text-xs text-muted-foreground font-medium">{edu.score}</p>
-      </div>
-    </motion.div>
-  );
-}
 
 export default function Overview() {
   return (
@@ -110,33 +78,19 @@ export default function Overview() {
         </motion.div>
       </div>
 
-      {/* Education */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="mb-6"
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="flex justify-center mt-8"
       >
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl grid place-items-center"
-            style={{ background: "var(--teal-soft)" }}>
-            <GraduationCap size={18} style={{ color: "var(--teal)" }} />
-          </div>
-          <h2
-            className="text-2xl font-bold"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Education
-          </h2>
-        </div>
+        <Link 
+          to="/experience" 
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/10 text-primary font-semibold hover:bg-primary/20 transition-colors"
+        >
+          View Full Timeline <ArrowRight size={16} />
+        </Link>
       </motion.div>
-
-      <div className="space-y-4">
-        {education.map((edu, i) => (
-          <EduCard key={edu.degree} edu={edu} index={i} />
-        ))}
-      </div>
     </PageShell>
   );
 }

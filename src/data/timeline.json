@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "type": "education",
+    "title": "SSLC (10th Standard)",
+    "subtitle": "St. Antony's Higher Secondary School",
+    "date": "2021",
+    "description": "Percentage: 83%",
+    "points": [],
+    "icon": "award",
+    "technologies": []
+  },
+  
+  {
+    "id": 2,
+    "type": "education",
+    "title": "HSC (12th Standard)",
+    "subtitle": "St. Antony's Higher Secondary School",
+    "date": "2021 - 2023",
+    "description": "Percentage: 72%",
+    "points": [],
+    "icon": "award",
+    "technologies": []
+  },
+  {
+    "id": 3,
+    "type": "education",
+    "title": "B.E. Computer and Communication Engineering",
+    "subtitle": "Sri Sairam Institute of Technology",
+    "date": "2024 - 2028",
+    "description": "Current CGPA: 8.7",
+    "points": [],
+    "icon": "graduation",
+    "technologies": []
+  },
+  {
+    "id": 4,
+    "type": "experience",
+    "title": "RHEL System Administrator Intern",
+    "subtitle": "Vectra Technosoft Pvt. Ltd.",
+    "date": "Jan 2026 - Feb 2026",
+    "description": "Completed internship training focused on deploying and managing containerized applications using Docker on Red Hat Enterprise Linux environments.",
+    "points": [
+      "Deployed and managed a containerized To-Do application using Docker on Red Hat Linux environments.",
+      "Handled container lifecycle management, image optimization, and Linux-based deployment workflows.",
+      "Configured and maintained Linux environments for application hosting and container execution.",
+      "Applied best practices for Docker containerization, scalability, and system administration."
+    ],
+    "icon": "rocket",
+    "technologies": ["Linux", "RHEL", "Docker"]
+  },
+  {
+    "id": 5,
+    "type": "experience",
+    "title": "MERN Stack Intern",
+    "subtitle": "NPTEL Winter Internship Programme - IIT Ropar",
+    "date": "Jan 2026 - Mar 2026",
+    "description": "Completed a 10-week internship focused on MERN stack development, problem-solving, case studies, and real-world project development under the guidance of Prof. Sudarshan Iyengar.",
+    "points": [
+      "Learned and applied MERN stack concepts in full-stack application development.",
+      "Worked on technical case studies to improve analytical and problem-solving skills.",
+      "Participated in viva and endorsement evaluations during the internship process.",
+      "Developed a real-world full-stack project with frontend, backend, and database integration."
+    ],
+    "icon": "briefcase",
+    "technologies": ["React", "Node.js", "Express.js", "MongoDB", "TypeScript"]
+  }
+]
