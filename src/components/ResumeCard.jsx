@@ -21,7 +21,7 @@ export default function ResumeCard() {
         >
           {/* Subtle background glow effect */}
           <div 
-            className="absolute -inset-1 bg-gradient-to-r from-primary/10 via-accent/10 to-teal/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none" 
+            className="absolute -inset-1 bg-linear-to-r from-primary/10 via-accent/10 to-teal/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none" 
             aria-hidden="true" 
           />
 
