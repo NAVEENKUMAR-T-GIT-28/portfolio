@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import profileImg from "@/data/images/profile.png";
+const profileImg = "/images/profile.png";
 
 export default function HeroProfile({ floatingTech = [], techIconsMap = {} }) {
   const [hoveredTech, setHoveredTech] = useState(null);
