@@ -22,6 +22,5 @@
   { "name": "Postman", "category": "DevOps & Tools", "icon": "Send", "color": "#FF6C37", "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
   { "name": "Networking", "category": "DevOps & Tools", "icon": "Network", "color": "#0EA5E9", "imageUrl": "https://cdn-icons-png.flaticon.com/512/2885/2885417.png" },
   { "name": "Figma", "category": "Design & Other", "icon": "Figma", "color": "#F24E1E", "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
-  { "name": "Canva", "category": "Design & Other", "icon": "Palette", "color": "#22d3ee", "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" },
-  { "name": "Red Hat RHCSA", "category": "Certifications", "icon": "BadgeCheck", "color": "#EE0000", "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redhat/redhat-original.svg" }
+  { "name": "Canva", "category": "Design & Other", "icon": "Palette", "color": "#22d3ee", "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" }
 ]

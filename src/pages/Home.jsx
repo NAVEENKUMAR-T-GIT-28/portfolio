@@ -1,406 +1,369 @@
-import { useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Code2, GraduationCap, Mail, Phone, MapPin, Send } from "lucide-react";
-import * as Icons from "lucide-react";
-import React from "react";
-
+import {
+  ArrowRight, User, Briefcase, Code2, FolderKanban,
+  Award, Mail, Github, Linkedin, Instagram, ChevronRight
+} from "lucide-react";
 import personal from "@/data/personal.json";
-import skills from "@/data/skills.json";
-import education from "@/data/education.json";
+import projects from "@/data/projects.json";
 import experience from "@/data/experience.json";
 import technologies from "@/data/technologies.json";
-import projects from "@/data/projects.json";
-import contact from "@/data/contact.json";
 import socialLinks from "@/data/socialLinks.json";
-
-import { AnimatedButton } from "@/components/AnimatedButton";
-import { SocialLinks } from "@/components/SocialLinks";
-import { SectionHeading } from "@/components/SectionHeading";
-import { SectionDivider } from "@/components/SectionDivider";
 import { ScrollToTop } from "@/components/ScrollToTop";
-import { TimelineCard } from "@/components/TimelineCard";
-import { TechnologyCard } from "@/components/TechnologyCard";
-import { ProjectCard } from "@/components/ProjectCard";
+import InfiniteTechCards from "@/components/InfiniteTechCards";
 
-/* ─────────────── HERO ─────────────── */
-function HeroSection() {
-  return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-24">
-      <div className="text-center max-w-5xl mx-auto">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-sm uppercase tracking-[0.3em] text-primary mb-6"
-        >
-          Welcome to my portfolio
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05]"
-        >
-          {personal.firstName}{" "}
-          <span className="text-gradient">{personal.highlightName}</span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-7 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
-        >
-          {personal.subtitle}
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
-        >
-          <AnimatedButton to="/projects" variant="primary" icon={<ArrowRight size={17} />}>
-            {personal.ctaPrimary}
-          </AnimatedButton>
-          <AnimatedButton to="/contact" variant="outline">
-            {personal.ctaSecondary}
-          </AnimatedButton>
-        </motion.div>
-        <SocialLinks className="justify-center mt-12" />
-      </div>
-    </section>
-  );
-}
+/* ── Helpers ───────────────────────────────────────── */
+const ICON_MAP = { Github, Linkedin, Instagram, Mail };
 
-/* ─────────────── OVERVIEW ─────────────── */
-function OverviewSection() {
-  return (
-    <section id="overview" className="py-20 px-6">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading title="About" highlight="Me" />
-
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="glass-card glow-hover rounded-3xl p-8"
-          >
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-12 h-12 rounded-xl grid place-items-center bg-gradient-to-br from-primary to-blue-500 text-primary-foreground">
-                <Sparkles size={22} />
-              </div>
-              <h3 className="text-2xl font-bold">Professional Bio</h3>
-            </div>
-            <p className="text-muted-foreground leading-relaxed">{personal.bio}</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
-            className="glass-card glow-hover rounded-3xl p-8"
-          >
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-12 h-12 rounded-xl grid place-items-center bg-gradient-to-br from-orange-500 to-amber-400 text-background">
-                <Code2 size={22} />
-              </div>
-              <h3 className="text-2xl font-bold">Core Skills</h3>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {skills.map((s) => (
-                <span key={s} className="px-3.5 py-1.5 text-sm rounded-full bg-secondary/60 border border-border text-foreground">{s}</span>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 rounded-xl grid place-items-center bg-gradient-to-br from-cyan-400 to-blue-500 text-background">
-            <GraduationCap size={22} />
-          </div>
-          <h3 className="text-3xl font-bold">Education</h3>
-        </div>
-        <div className="space-y-4">
-          {education.map((edu, i) => (
-            <motion.div
-              key={edu.degree}
-              initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-              className="glass-card rounded-2xl p-6 border-l-4 border-l-primary glow-hover"
-            >
-              <div className="flex flex-wrap items-start justify-between gap-3">
-                <div>
-                  <h4 className="text-lg font-bold">{edu.degree}</h4>
-                  <p className="text-primary font-medium mt-1">{edu.institution}</p>
-                  <p className="text-sm text-muted-foreground mt-2">{edu.score}</p>
-                </div>
-                <span className="text-xs px-3 py-1.5 rounded-full bg-secondary/60 border border-border text-muted-foreground">{edu.date}</span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────── EXPERIENCE ─────────────── */
-function ExperienceSection() {
-  return (
-    <section id="experience" className="py-20 px-6">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading title="Work" highlight="Experience" subtitle="A journey through the roles that shaped my craft." />
-        <div className="relative">
-          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/0 via-primary/60 to-primary/0" />
-          <div className="space-y-16">
-            {experience.map((item, i) => (
-              <TimelineCard key={i} item={item} index={i} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────── TECHNOLOGIES ─────────────── */
-function TechnologiesSection() {
-  const categories = useMemo(
-    () => ["All", ...Array.from(new Set(technologies.map((t) => t.category)))],
-    []
-  );
-  const [active, setActive] = useState("All");
-  const filtered = active === "All" ? technologies : technologies.filter((t) => t.category === active);
-
-  const grouped = useMemo(() => {
-    const map = new Map();
-    for (const t of filtered) {
-      if (!map.has(t.category)) map.set(t.category, []);
-      map.get(t.category).push(t);
-    }
-    return map;
-  }, [filtered]);
-
-  return (
-    <section id="technologies" className="py-20 px-6">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          title="Technologies"
-          highlight="& Skills"
-          subtitle="A comprehensive overview of my technical expertise and proficiency levels"
-        />
-        <div className="flex flex-wrap justify-center gap-2 mb-14">
-          {categories.map((c) => (
-            <button
-              key={c}
-              onClick={() => setActive(c)}
-              className={`relative px-5 py-2.5 text-sm font-medium rounded-full transition-all ${
-                active === c
-                  ? "bg-primary text-primary-foreground shadow-[0_0_24px_oklch(0.78_0.16_220/0.5)]"
-                  : "glass-card text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
-        <div className="space-y-12">
-          {Array.from(grouped.entries()).map(([category, items]) => (
-            <div key={category}>
-              {active === "All" && (
-                <h3 className="text-2xl font-bold mb-6 text-foreground/90">{category}</h3>
-              )}
-              <motion.div
-                layout
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
-              >
-                {items.map((t, i) => (
-                  <TechnologyCard key={t.name} tech={t} index={i} />
-                ))}
-              </motion.div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────── PROJECTS ─────────────── */
-function ProjectsSection() {
-  return (
-    <section id="projects" className="py-20 px-6">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          title="Featured"
-          highlight="Projects"
-          subtitle="A showcase of recent work and side projects demonstrating various technical skills and creative solutions"
-        />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((p, i) => (
-            <ProjectCard key={p.id} project={p} index={i} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────── CONTACT ─────────────── */
-const infoItems = [
-  { label: "Email", value: contact.email, icon: Mail },
-  { label: "Phone", value: contact.phone, icon: Phone },
-  { label: "Location", value: contact.location, icon: MapPin },
+const SECTION_CARDS = [
+  {
+    to: "/overview",
+    icon: User,
+    label: "Overview",
+    color: "var(--primary)",
+    colorSoft: "var(--primary-glow)",
+    description: "Who I am, my education background, and the core skills that drive my work as a full-stack developer.",
+    stat: "B.E. CCE · 2027",
+  },
+  {
+    to: "/experience",
+    icon: Briefcase,
+    label: "Experience",
+    color: "var(--accent)",
+    colorSoft: "var(--accent-soft)",
+    description: "Internships at IIT Ropar (NPTEL MERN Stack) and Vectra Technosoft (RHEL + Docker containerization).",
+    stat: `${experience.length} internships`,
+  },
+  {
+    to: "/technologies",
+    icon: Code2,
+    label: "Technologies",
+    color: "var(--teal)",
+    colorSoft: "var(--teal-soft)",
+    description: "A full snapshot of languages, frameworks, databases, DevOps tools, and design technologies I use.",
+    stat: `${technologies.length} technologies`,
+  },
+  {
+    to: "/projects",
+    icon: FolderKanban,
+    label: "Projects",
+    color: "var(--amber)",
+    colorSoft: "var(--amber-soft)",
+    description: "Real-world applications built with modern stacks — from quiz platforms to containerised full-stack apps.",
+    stat: `${projects.length} projects`,
+  },
+  {
+    to: "/certifications",
+    icon: Award,
+    label: "Certifications",
+    color: "var(--primary)",
+    colorSoft: "var(--primary-glow)",
+    description: "NPTEL, RHCSA, and other credentials that validate my technical expertise and continuous learning.",
+    stat: "Verified credentials",
+  },
+  {
+    to: "/contact",
+    icon: Mail,
+    label: "Contact",
+    color: "var(--accent)",
+    colorSoft: "var(--accent-soft)",
+    description: "Have a project idea, collaboration proposal, or just want to say hi? Drop me a message anytime.",
+    stat: "Open to opportunities",
+  },
 ];
 
-const Field = React.forwardRef(({ label, type = "text", placeholder }, ref) => {
+/* ── Section preview card ────────────────────────── */
+function SectionCard({ card, index }) {
+  const Icon = card.icon;
   return (
-    <div>
-      <label className="text-sm font-semibold mb-2 block">{label} *</label>
-      <input
-        ref={ref}
-        required
-        type={type}
-        placeholder={placeholder}
-        className="w-full bg-input/40 border border-border rounded-xl px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition-all"
-      />
-    </div>
-  );
-});
-Field.displayName = "Field";
-
-function ContactSection() {
-  const [sent, setSent] = useState(false);
-  const nameRef = useRef(null);
-  const emailRef = useRef(null);
-  const subjectRef = useRef(null);
-  const messageRef = useRef(null);
-
-  function onSubmit(e) {
-    e.preventDefault();
-    const name = nameRef.current?.value ?? "";
-    const senderEmail = emailRef.current?.value ?? "";
-    const subject = subjectRef.current?.value ?? "";
-    const message = messageRef.current?.value ?? "";
-
-    const mailtoSubject = encodeURIComponent(subject || `Message from ${name}`);
-    const mailtoBody = encodeURIComponent(
-      `Hi Naveenkumar,\n\n${message}\n\n---\nFrom: ${name}\nEmail: ${senderEmail}`
-    );
-
-    const mailtoUrl = `mailto:${contact.email}?subject=${mailtoSubject}&body=${mailtoBody}`;
-    const anchor = document.createElement("a");
-    anchor.href = mailtoUrl;
-    anchor.click();
-
-    setSent(true);
-    setTimeout(() => setSent(false), 3000);
-  }
-
-  return (
-    <section id="contact" className="py-20 px-6">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          title={contact.heading.split(" ")[0]}
-          highlight={contact.heading.split(" ").slice(1).join(" ")}
-          subtitle={contact.subheading}
-        />
-
-        <div className="grid lg:grid-cols-[1.4fr_1fr] gap-6">
-          <motion.form
-            onSubmit={onSubmit}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="glass-card rounded-3xl p-8 space-y-5"
-          >
-            <div className="grid sm:grid-cols-2 gap-5">
-              <Field ref={nameRef} label="Name" placeholder="Your name" />
-              <Field ref={emailRef} label="Email" type="email" placeholder="your@email.com" />
-            </div>
-            <Field ref={subjectRef} label="Subject" placeholder="What's this about?" />
-            <div>
-              <label className="text-sm font-semibold mb-2 block">Message *</label>
-              <textarea
-                ref={messageRef}
-                required
-                rows={6}
-                placeholder="Tell me more about your project..."
-                className="w-full bg-input/40 border border-border rounded-xl px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition-all resize-none"
-              />
-            </div>
-            <AnimatedButton type="submit" variant="primary" icon={<Send size={16} />} className="w-full">
-              {sent ? "Opening Mail App..." : "Send Message"}
-            </AnimatedButton>
-          </motion.form>
-
-          <div className="space-y-6">
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="glass-card rounded-3xl p-7"
+    <motion.div
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.45, delay: index * 0.06, ease: [0.4, 0, 0.2, 1] }}
+    >
+      <Link to={card.to} className="block h-full" aria-label={`Go to ${card.label}`}>
+        <div className="card card-hover section-preview-card h-full p-6 flex flex-col gap-4">
+          {/* Icon + arrow */}
+          <div className="flex items-start justify-between">
+            <div
+              className="w-11 h-11 rounded-xl grid place-items-center"
+              style={{ background: card.colorSoft }}
             >
-              <h3 className="text-xl font-bold mb-5">Contact Information</h3>
-              <div className="space-y-5">
-                {infoItems.map((it) => (
-                  <div key={it.label} className="flex items-center gap-4">
-                    <div className="w-11 h-11 rounded-xl grid place-items-center bg-linear-to-br from-primary to-blue-500 text-primary-foreground shrink-0">
-                      <it.icon size={18} />
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground">{it.label}</p>
-                      <p className="text-sm font-medium">{it.value}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+              <Icon size={20} style={{ color: card.color }} strokeWidth={2} />
+            </div>
+            <ChevronRight
+              size={18}
+              className="arrow-icon mt-0.5"
+              style={{ color: card.color }}
+            />
+          </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="glass-card rounded-3xl p-7"
+          {/* Content */}
+          <div className="flex-1">
+            <p
+              className="text-xs font-bold uppercase tracking-widest mb-1"
+              style={{ color: card.color }}
             >
-              <h3 className="text-xl font-bold mb-5">Connect With Me</h3>
-              <div className="space-y-2">
-                {socialLinks.map((s) => {
-                  const Icon =
-                    Icons[s.icon] ?? Icons.Link;
-                  return (
-                    <a
-                      key={s.name}
-                      href={s.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl bg-secondary/40 border border-border hover:border-primary/60 hover:text-primary transition-all"
-                    >
-                      <Icon size={18} />
-                      <span className="text-sm font-medium">{s.name}</span>
-                    </a>
-                  );
-                })}
-              </div>
-            </motion.div>
+              {card.label}
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {card.description}
+            </p>
+          </div>
+
+          {/* Stat chip */}
+          <div>
+            <span
+              className="badge"
+              style={{
+                background: card.colorSoft,
+                color: card.color,
+                border: `1px solid ${card.color}30`,
+              }}
+            >
+              {card.stat}
+            </span>
           </div>
         </div>
-      </div>
-    </section>
+      </Link>
+    </motion.div>
   );
 }
 
-/* ─────────────── HOME (FULL PAGE) ─────────────── */
+/* ── Featured project mini-card ───────────────────── */
+function ProjectMini({ project, index }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -16 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
+      className="card card-hover p-5 flex items-center gap-4"
+    >
+      <div className="w-10 h-10 rounded-xl bg-primary/10 grid place-items-center shrink-0">
+        <FolderKanban size={18} className="text-primary" />
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className="font-semibold text-sm truncate">{project.title}</p>
+        <p className="text-xs text-muted-foreground line-clamp-1 mt-0.5">{project.description}</p>
+      </div>
+      <a
+        href={project.githubUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="btn btn-ghost p-2 rounded-lg shrink-0"
+        aria-label={`View ${project.title} on GitHub`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <Github size={16} />
+      </a>
+    </motion.div>
+  );
+}
+
+/* ── Main Home Page ───────────────────────────────── */
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <SectionDivider />
-      <OverviewSection />
-      <SectionDivider />
-      <ExperienceSection />
-      <SectionDivider />
-      <TechnologiesSection />
-      <SectionDivider />
-      <ProjectsSection />
-      <SectionDivider />
-      <ContactSection />
+      <div className="min-h-dvh relative overflow-hidden">
+        {/* Background mesh */}
+        <div className="hero-mesh" aria-hidden="true" />
+
+        {/* Subtle grid */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: `
+              linear-gradient(var(--color-border) 1px, transparent 1px),
+              linear-gradient(90deg, var(--color-border) 1px, transparent 1px)
+            `,
+            backgroundSize: "48px 48px",
+            opacity: 0.18,
+          }}
+          aria-hidden="true"
+        />
+
+        {/* ── HERO ── */}
+        <section className="relative flex items-center justify-center min-h-dvh px-6 pt-24 pb-16">
+          <div className="text-center max-w-3xl mx-auto">
+            {/* Eyebrow */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-primary/20 mb-8"
+            >
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-xs font-semibold text-primary tracking-wide">
+                Available for internships & collaborations
+              </span>
+            </motion.div>
+
+            {/* Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-6"
+            >
+              {personal.firstName}{" "}
+              <span className="text-gradient">{personal.highlightName}</span>
+            </motion.h1>
+
+            {/* Role */}
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.22 }}
+              className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed mb-10"
+            >
+              {personal.subtitle}
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.34 }}
+              className="flex flex-wrap items-center justify-center gap-3 mb-12"
+            >
+              <Link to="/projects" className="btn btn-primary" aria-label="View my projects">
+                {personal.ctaPrimary}
+                <ArrowRight size={16} />
+              </Link>
+              <Link to="/contact" className="btn btn-outline" aria-label="Contact me">
+                {personal.ctaSecondary}
+              </Link>
+            </motion.div>
+
+            {/* Social */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.46 }}
+              className="flex items-center justify-center gap-3"
+            >
+              {socialLinks.map((s, i) => {
+                const Icon = ICON_MAP[s.icon] ?? Github;
+                return (
+                  <a
+                    key={s.name}
+                    href={s.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={s.name}
+                    className="social-link-btn"
+                    style={{ animationDelay: `${i * 60}ms` }}
+                  >
+                    <Icon size={18} />
+                  </a>
+                );
+              })}
+            </motion.div>
+          </div>
+        </section>
+      </div>
+
+      {/* ── INFINITE TECHNOLOGY CARDS ── */}
+      <InfiniteTechCards />
+
+      {/* ── SECTION GRID ── */}
+      <section className="py-24 px-6" aria-labelledby="explore-heading">
+        <div className="page-container">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-14"
+          >
+            <span className="section-label" aria-hidden="true">Explore</span>
+            <h2
+              id="explore-heading"
+              className="text-4xl md:text-5xl font-extrabold tracking-tight"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              What I've been{" "}
+              <span className="text-gradient">building</span>
+            </h2>
+            <p className="mt-3 text-muted-foreground max-w-lg">
+              Click any card to dive into that section of my portfolio.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {SECTION_CARDS.map((card, i) => (
+              <SectionCard key={card.to} card={card} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURED PROJECTS ── */}
+      <section className="py-20 px-6 bg-secondary/30" aria-labelledby="projects-heading">
+        <div className="page-container">
+          <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
+            <div>
+              <span className="section-label" aria-hidden="true">Featured</span>
+              <h2
+                id="projects-heading"
+                className="text-3xl md:text-4xl font-extrabold tracking-tight"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Recent Projects
+              </h2>
+            </div>
+            <Link to="/projects" className="btn btn-outline text-sm">
+              View all <ArrowRight size={15} />
+            </Link>
+          </div>
+          <div className="grid gap-4 max-w-2xl">
+            {projects.map((p, i) => (
+              <ProjectMini key={p.id} project={p} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── QUICK CONTACT CTA ── */}
+      <section className="py-24 px-6" aria-labelledby="cta-heading">
+        <div className="page-container">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+            className="card text-center py-16 px-8 relative overflow-hidden"
+          >
+            {/* Decorative glow */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: "radial-gradient(ellipse at 50% 0%, var(--primary-glow) 0%, transparent 60%)",
+              }}
+              aria-hidden="true"
+            />
+            <div className="relative">
+              <span className="section-label justify-center" aria-hidden="true">Let's connect</span>
+              <h2
+                id="cta-heading"
+                className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Got a project in mind?
+              </h2>
+              <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+                I'm actively looking for internships and collaboration opportunities. Let's build something great together.
+              </p>
+              <Link to="/contact" className="btn btn-primary text-base px-8 py-4">
+                Get In Touch <ArrowRight size={18} />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <ScrollToTop />
     </>
   );

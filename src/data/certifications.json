@@ -1,0 +1,60 @@
+[
+  {
+    "id": 1,
+    "title": "MERN Stack Development",
+    "issuer": "NPTEL · IIT Ropar",
+    "issuerShort": "NPTEL",
+    "date": "Mar 2026",
+    "status": "completed",
+    "credential": "",
+    "description": "10-week intensive programme covering MongoDB, Express.js, React, and Node.js. Completed under Prof. Sudarshan Iyengar with a real-world full-stack project and viva evaluation.",
+    "skills": ["React", "Node.js", "Express.js", "MongoDB", "REST APIs"],
+    "color": "primary",
+    "badge": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+  },
+  {
+    "id": 2,
+    "title": "Red Hat Certified System Administrator (RHCSA)",
+    "issuer": "Vectra Technosoft · Red Hat",
+    "issuerShort": "Red Hat",
+    "date": "Feb 2026",
+    "score":"300",
+    "total":"300",
+    "percentage":"100%",
+    "status": "completed",
+    "credential": "",
+    "description": "Hands-on training in Red Hat Enterprise Linux system administration, Docker containerisation, and Linux-based application deployment workflows.",
+    "skills": ["Linux", "RHEL", "Docker", "System Admin", "Containerisation"],
+    "color": "accent",
+    "badge": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redhat/redhat-original.svg"
+  },
+  {
+    "id": 3,
+    "title": "Python for Data Science",
+    "issuer": "NPTEL · IIT",
+    "issuerShort": "NPTEL",
+    "date": "2024",
+    "status": "completed",
+    "score":"87",
+    "total":"100",
+    "percentage":"87%",
+    "credential": "",
+    "description": "Foundational to intermediate Python programming concepts including data structures, OOP, and scripting for automation.",
+    "skills": ["Python", "OOP", "Data Structures", "Scripting"],
+    "color": "teal",
+    "badge": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+  },
+  {
+    "id": 4,
+    "title": "Database Management Systems",
+    "issuer": "NPTEL · IIT",
+    "issuerShort": "NPTEL",
+    "date": "2024",
+    "status": "completed",
+    "credential": "",
+    "description": "Comprehensive study of relational databases, SQL, normalisation, transactions, and query optimisation.",
+    "skills": ["SQL", "MySQL", "PostgreSQL", "DBMS", "Normalisation"],
+    "color": "amber",
+    "badge": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+  }
+]

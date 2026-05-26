@@ -1,8 +1,9 @@
 [
-  { "label": "Home", "to": "/", "sectionId": "home" },
-  { "label": "Overview", "to": "/overview", "sectionId": "overview" },
-  { "label": "Experience", "to": "/experience", "sectionId": "experience" },
-  { "label": "Technologies", "to": "/technologies", "sectionId": "technologies" },
-  { "label": "Projects", "to": "/projects", "sectionId": "projects" },
-  { "label": "Contact", "to": "/contact", "sectionId": "contact" }
+  { "label": "Home",           "to": "/" },
+  { "label": "Overview",       "to": "/overview" },
+  { "label": "Experience",     "to": "/experience" },
+  { "label": "Technologies",   "to": "/technologies" },
+  { "label": "Projects",       "to": "/projects" },
+  { "label": "Certifications", "to": "/certifications" },
+  { "label": "Contact",        "to": "/contact" }
 ]

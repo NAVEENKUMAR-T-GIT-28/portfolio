@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 
-export function PageShell({ children }) {
+export function PageShell({ children, className = "" }) {
   return (
-    <motion.main
-      initial={{ opacity: 0, y: 12 }}
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-      className="relative min-h-screen pt-32 pb-20 px-6"
+      transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
+      className={`page-shell px-6 ${className}`}
     >
-      <div className="mx-auto max-w-7xl">{children}</div>
-    </motion.main>
+      <div className="page-container">{children}</div>
+    </motion.div>
   );
 }

@@ -31,7 +31,7 @@ export function ProjectCard({ project, index }) {
             <ExternalLink size={15} /> Live Demo
           </a>
           <a href={project.githubUrl} target="_blank" rel="noreferrer"
-             className="w-11 h-11 grid place-items-center rounded-xl border border-border text-muted-foreground hover:text-primary hover:border-primary/60 transition-colors">
+             className="w-11 h-11 flex items-center justify-center rounded-xl border border-border/80 bg-secondary/10 text-foreground hover:text-primary hover:border-primary/40 hover:bg-primary/5 hover:shadow-glow transition-all duration-300">
             <Github size={16} />
           </a>
         </div>

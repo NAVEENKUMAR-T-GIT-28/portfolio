@@ -14,7 +14,7 @@
     "description": "A premium dark-themed developer portfolio with a fully JSON-driven architecture, cursor-reactive border glow effects, tsParticles background, smooth Framer Motion animations, and light/dark theme support.",
     "image": "",
     "tech": ["React", "TypeScript", "TanStack Router", "Tailwind CSS", "Framer Motion"],
-    "liveUrl": "",
+    "liveUrl": "a",
     "githubUrl": "https://github.com"
   }
 ]
