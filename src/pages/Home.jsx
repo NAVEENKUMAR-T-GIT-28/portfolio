@@ -10,7 +10,7 @@ import experience from "@/data/experience.json";
 import technologies from "@/data/technologies.json";
 import socialLinks from "@/data/socialLinks.json";
 import { ScrollToTop } from "@/components/ScrollToTop";
-import InfiniteTechCards from "@/components/InfiniteTechCards";
+import TechnologySection from "@/components/TechnologySection";
 import HeroProfile from "@/components/HeroProfile";
 import HeroSection from "@/components/HeroSection";
 
@@ -190,8 +190,8 @@ export default function Home() {
         <HeroSection />
       </div>
 
-      {/* ── INFINITE TECHNOLOGY CARDS ── */}
-      <InfiniteTechCards />
+      {/* ── TECHNOLOGY SECTION ── */}
+      <TechnologySection />
 
       {/* ── SECTION GRID ── */}
       <section className="py-24 px-6" aria-labelledby="explore-heading">

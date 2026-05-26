@@ -2,19 +2,69 @@
   {
     "id": 1,
     "title": "QuizPulse",
-    "description": "Real-time quiz platform with OTP authentication, live leaderboards, and Docker-based deployment for scalable multi-user sessions.",
-    "image": "",
+    "tagline": "Real-time multiplayer quiz experience",
+    "description": "Real-time quiz platform with OTP authentication, live leaderboards, scalable multi-user sessions.",
+    "overview": "QuizPulse is a full-stack real-time quiz platform built for engaging multi-user quiz sessions. It includes OTP-based authentication, live leaderboard updates, and scalable deployment using Docker. The system focuses on responsiveness, performance, and smooth real-time interactions.",
+    "images": {
+      "light": "/src/data/images/projects/QuizPulse-light.png",
+      "dark": "/src/data/images/projects/QuizPulse-dark.png"
+    },
     "tech": ["React", "Node.js", "MongoDB", "Docker"],
+    "techStack": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Docker",
+      "Express.js",
+      "JWT",
+      "OTP Authentication"
+    ],
+    "challenges": [
+      "Managing real-time leaderboard synchronization",
+      "Implementing OTP-based authentication flow",
+      "Handling multiple concurrent quiz sessions"
+    ],
+    "learned": [
+      "Real-time application architecture",
+      "Authentication and session handling",
+      "Backend API structuring",
+      "Containerized deployment with Docker"
+    ],
     "liveUrl": "https://quizpulse-live.vercel.app",
     "githubUrl": "https://github.com/NAVEENKUMAR-T-GIT-28/QuizPulse"
   },
   {
     "id": 2,
     "title": "Dev Portfolio",
-    "description": "A premium dark-themed developer portfolio with a fully JSON-driven architecture, cursor-reactive border glow effects, tsParticles background, smooth Framer Motion animations, and light/dark theme support.",
-    "image": "",
-    "tech": ["React", "TypeScript", "TanStack Router", "Tailwind CSS", "Framer Motion"],
-    "liveUrl": "a",
+    "tagline": "Modern animated developer showcase",
+    "description": "A premium dark-themed developer portfolio with JSON architecture and Framer Motion effects.",
+    "overview": "A fully responsive developer portfolio designed with a premium glassmorphism aesthetic. Built using reusable JSON-driven architecture, smooth Framer Motion animations, and a modular component structure to create a modern user experience.",
+    "images": {
+      "light": "/src/data/images/projects/portfolio-light.png",
+      "dark": "/src/data/images/projects/portfolio-dark.png"
+    },
+    "tech": ["React", "TypeScript", "Tailwind CSS"],
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Vite",
+      "JSON Architecture"
+    ],
+    "challenges": [
+      "Building reusable component structures",
+      "Creating smooth animation performance",
+      "Managing dark/light theme consistency",
+      "Designing responsive layouts"
+    ],
+    "learned": [
+      "Advanced Framer Motion usage",
+      "Component architecture planning",
+      "UI/UX design principles",
+      "Performance optimization techniques"
+    ],
+    "liveUrl": "/",
     "githubUrl": "https://github.com"
   }
 ]
