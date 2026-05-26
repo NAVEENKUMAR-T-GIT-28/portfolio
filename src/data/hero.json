@@ -1,0 +1,44 @@
+{
+  "name": "NAVEENKUMAR T",
+  "title": "2nd Year Computer and Communication Engineering Student",
+  "roles": [
+    "Full-Stack Developer",
+    "MERN Builder",
+    "Docker Learner",
+    "RHCSA Certified System Administrator"
+  ],
+  "availability": {
+    "status": "Available for Internships",
+    "active": true
+  },
+  "stats": [
+    {
+      "icon": "🏢",
+      "value": "2+",
+      "label": "Internships"
+    },
+    {
+      "icon": "🔴",
+      "value": "RHCSA",
+      "label": "Red Hat Certified System Administrator"
+    }
+  ],
+  "floatingTech": [
+    "React",
+    "Docker",
+    "Linux",
+    "JavaScript",
+    "MongoDB",
+    "Vite"
+  ],
+  "techIconsMap": {
+    "React": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "Java": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    "Docker": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    "Linux": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+    "JavaScript": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    "MongoDB": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    "Vite": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg",
+    "Tailwind": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+  }
+}

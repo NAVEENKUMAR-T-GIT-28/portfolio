@@ -12,6 +12,7 @@ import socialLinks from "@/data/socialLinks.json";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import InfiniteTechCards from "@/components/InfiniteTechCards";
 import HeroProfile from "@/components/HeroProfile";
+import HeroSection from "@/components/HeroSection";
 
 /* ── Helpers ───────────────────────────────────────── */
 const ICON_MAP = { Github, Linkedin, Instagram, Mail };
@@ -186,94 +187,7 @@ export default function Home() {
         />
 
         {/* ── HERO ── */}
-        <section className="relative flex items-center justify-center min-h-dvh px-6 pt-24 pb-16">
-          <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 lg:gap-8 items-center pt-8 sm:pt-16">
-            
-            {/* Left Column: Text Content */}
-            <div className="text-center lg:text-left flex flex-col items-center lg:items-start order-2 lg:order-1 z-10">
-              {/* Eyebrow */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-primary/20 mb-8"
-              >
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-xs font-semibold text-primary tracking-wide">
-                  Available for internships & collaborations
-                </span>
-              </motion.div>
-
-              {/* Headline */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-display text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl mb-6"
-              >
-                {personal.firstName}{" "}
-                <span className="text-gradient">{personal.highlightName}</span>
-              </motion.h1>
-
-              {/* Role */}
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.22 }}
-                className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10"
-              >
-                {personal.subtitle}
-              </motion.p>
-
-              {/* CTAs */}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.34 }}
-                className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-12"
-              >
-                <Link to="/projects" className="btn btn-primary" aria-label="View my projects">
-                  {personal.ctaPrimary}
-                  <ArrowRight size={16} />
-                </Link>
-                <Link to="/contact" className="btn btn-outline" aria-label="Contact me">
-                  {personal.ctaSecondary}
-                </Link>
-              </motion.div>
-
-              {/* Social */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.46 }}
-                className="flex items-center justify-center lg:justify-start gap-3"
-              >
-                {socialLinks.map((s, i) => {
-                  const Icon = ICON_MAP[s.icon] ?? Github;
-                  return (
-                    <a
-                      key={s.name}
-                      href={s.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={s.name}
-                      className="social-link-btn"
-                      style={{ animationDelay: `${i * 60}ms` }}
-                    >
-                      <Icon size={18} />
-                    </a>
-                  );
-                })}
-              </motion.div>
-            </div>
-
-            {/* Right Column: Hero Profile */}
-            <div className="order-1 lg:order-2 flex justify-center w-full relative z-10">
-              <HeroProfile />
-            </div>
-
-          </div>
-        </section>
+        <HeroSection />
       </div>
 
       {/* ── INFINITE TECHNOLOGY CARDS ── */}
