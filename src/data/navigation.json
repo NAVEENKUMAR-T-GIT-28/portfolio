@@ -1,0 +1,8 @@
+[
+  { "label": "Home", "to": "/", "sectionId": "home" },
+  { "label": "Overview", "to": "/overview", "sectionId": "overview" },
+  { "label": "Experience", "to": "/experience", "sectionId": "experience" },
+  { "label": "Technologies", "to": "/technologies", "sectionId": "technologies" },
+  { "label": "Projects", "to": "/projects", "sectionId": "projects" },
+  { "label": "Contact", "to": "/contact", "sectionId": "contact" }
+]

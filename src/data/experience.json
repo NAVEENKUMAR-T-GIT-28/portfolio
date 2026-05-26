@@ -1,0 +1,31 @@
+[
+    {
+    "role": "MERN Stack Intern",
+    "company": "NPTEL Winter Internship Programme - IIT Ropar",
+    "location": "Virtual",
+    "date": "24 Jan 2026 - 24 Mar 2026",
+    "description": "Completed a 10-week internship focused on MERN stack development, problem-solving, case studies, and real-world project development under the guidance of Prof. Sudarshan Iyengar.",
+    "responsibilities": [
+      "Learned and applied MERN stack concepts in full-stack application development.",
+      "Worked on technical case studies to improve analytical and problem-solving skills.",
+      "Participated in viva and endorsement evaluations during the internship process.",
+      "Developed a real-world full-stack project with frontend, backend, and database integration."
+    ],
+    "technologies": ["React", "Node.js", "Express.js", "MongoDB", "JavaScript", "TypeScript","MERN Stack"]
+  },
+  {
+    "role": "RHEL System Administrator Intern",
+    "company": "Vectra Technosoft Pvt. Ltd.",
+    "location": "Chennai, India",
+    "date": "Jan 2026 - Feb 2026",
+    "description": "Completed internship training focused on deploying and managing containerized applications using Docker on Red Hat Enterprise Linux environments. Worked on Linux administration, container lifecycle management, and scalable deployment practices.",
+    "responsibilities": [
+      "Deployed and managed a containerized To-Do application using Docker on Red Hat Linux environments.",
+      "Handled container lifecycle management, image optimization, and Linux-based deployment workflows.",
+      "Configured and maintained Linux environments for application hosting and container execution.",
+      "Integrated frontend and backend services to ensure smooth application functionality and responsive user experience.",
+      "Applied best practices for Docker containerization, scalability, and system administration."
+    ],
+    "technologies": [ "Linux", "Red Hat Enterprise Linux", "Docker"]
+  }
+]

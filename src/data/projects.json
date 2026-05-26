@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "QuizPulse",
+    "description": "Real-time quiz platform with OTP authentication, live leaderboards, and Docker-based deployment for scalable multi-user sessions.",
+    "image": "",
+    "tech": ["React", "Node.js", "MongoDB", "Docker"],
+    "liveUrl": "https://quizpulse-live.vercel.app",
+    "githubUrl": "https://github.com/NAVEENKUMAR-T-GIT-28/QuizPulse"
+  },
+  {
+    "id": 2,
+    "title": "Dev Portfolio",
+    "description": "A premium dark-themed developer portfolio with a fully JSON-driven architecture, cursor-reactive border glow effects, tsParticles background, smooth Framer Motion animations, and light/dark theme support.",
+    "image": "",
+    "tech": ["React", "TypeScript", "TanStack Router", "Tailwind CSS", "Framer Motion"],
+    "liveUrl": "",
+    "githubUrl": "https://github.com"
+  }
+]

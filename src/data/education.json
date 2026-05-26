@@ -1,0 +1,20 @@
+[
+  {
+    "degree": "B.E. Computer and Communication Engineering",
+    "institution": "Sri Sairam Institute of Technology",
+    "score": "CGPA: 7.5",
+    "date": "2023 - 2027"
+  },
+  {
+    "degree": "HSC (12th Standard)",
+    "institution": "St. Antony's Higher Secondary School",
+    "score": "Percentage: 72%",
+    "date": "2021 - 2023"
+  },
+  {
+    "degree": "SSLC (10th Standard)",
+    "institution": "St. Antony's Higher Secondary School",
+    "score": "Percentage: 83%",
+    "date": "2021"
+  }
+]
