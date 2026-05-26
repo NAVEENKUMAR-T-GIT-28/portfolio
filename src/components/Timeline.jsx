@@ -2,10 +2,29 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import TimelineItem from "@/components/TimelineItem";
 import timelineData from "@/data/timeline.json";
+import educationData from "@/data/education.json";
 
 export default function Timeline() {
   const containerRef = useRef(null);
-  
+
+  // Filter out hardcoded education items from timeline.json and keep only experience
+  const experienceItems = timelineData.filter(item => item.type === "experience");
+
+  // Map education.json to timeline format (reversing to match oldest-to-newest order)
+  const educationItems = [...educationData].reverse().map((edu, idx) => ({
+    id: `edu-${idx}`,
+    type: "education",
+    title: edu.degree,
+    subtitle: edu.institution,
+    date: edu.date,
+    description: edu.score,
+    points: [],
+    icon: edu.degree.includes("B.E.") || edu.degree.includes("Computer") ? "graduation" : "award",
+    technologies: []
+  }));
+
+  // Combine education (chronological) and experience (chronological)
+  const combinedTimelineData = [...educationItems, ...experienceItems];
   // Track scroll progress relative to the timeline container
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -28,7 +47,7 @@ export default function Timeline() {
       </div>
 
       <div className="relative z-10 flex flex-col">
-        {timelineData.map((item, index) => (
+        {combinedTimelineData.map((item, index) => (
           <TimelineItem key={item.id} item={item} index={index} />
         ))}
       </div>

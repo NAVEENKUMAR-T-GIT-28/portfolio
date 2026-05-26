@@ -66,5 +66,41 @@
     ],
     "liveUrl": "/",
     "githubUrl": "https://github.com/NAVEENKUMAR-T-GIT-28/portfolio"
+  },
+   {
+    "id": 3,
+    "title": "Kubera",
+    "tagline": "Smart spare change investment platform",
+    "description": "UPI-inspired micro-investment platform that automatically rounds transactions and invests spare change.",
+    "overview": "Kubera is a mobile-first fintech platform inspired by modern payment systems like GPay and PhonePe. It simulates digital payments, calculates round-up spare change, stores investment pools, and automatically triggers investments when thresholds are reached. The platform includes payment simulation, dashboard analytics, investment management, card systems, and admin monitoring.",
+    "images": {
+      "light": "/images/projects/kubera-light.png",
+      "dark": "/images/projects/kubera-dark.png"
+    },
+    "tech": ["React", "Node.js", "MongoDB"],
+    "techStack": [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "REST API",
+      "Chart.js"
+    ],
+    "challenges": [
+      "Designing round-up investment calculation logic",
+      "Managing spare pool and threshold-based investment workflows",
+      "Building scalable payment simulation architecture",
+      "Structuring modular backend services"
+    ],
+    "learned": [
+      "System design and fintech workflow architecture",
+      "Backend service separation and modularization",
+      "Database schema design",
+      "Payment system simulation",
+      "Dashboard analytics implementation"
+    ],
+    "liveUrl": "",
+    "githubUrl": "https://github.com/NAVEENKUMAR-T-GIT-28/Kubera"
   }
 ]
