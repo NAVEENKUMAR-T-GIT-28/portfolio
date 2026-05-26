@@ -1,169 +1,196 @@
-# 🌌  Developer Portfolio
+# 🌌 Next-Gen Developer Portfolio
 
-A next-generation, high-performance developer portfolio built with a state-of-the-art tech stack. This project showcases a visually stunning, fully responsive single-page web app experience powered by a **WebGL particle background** and dynamic **glassmorphism interfaces** using **Tailwind CSS v4** and **React 19**.
+A next-generation, high-performance developer portfolio built with a state-of-the-art tech stack. This project showcases a visually stunning, fully responsive single-page web app experience powered by a **WebGL particle background**, premium **dynamic glassmorphism interfaces**, and a **JSON-driven custom architecture** using **React 19** and **Tailwind CSS**.
 
 ---
 
-## ✨ Features
+## ✨ Premium Features & Architecture
 
-*   **⚡ High-Performance WebGL Particles:** Custom particle simulation utilizing [OGL](https://github.com/oogl/ogl) (a lightweight WebGL library) inside the `Particles` component. Runs smoothly at 60 FPS, reacts dynamically to light/dark themes, and supports subtle micro-animations.
-*   **🎨 Advanced Styling with Tailwind CSS v4:** Leverages the latest Tailwind v4 features, incorporating native custom CSS theme variables, `@theme inline` structure, and modern OKLCH color palettes for maximum color depth and range.
-*   **🌓 Adaptive Glassmorphism & Theme Engine:** Fully integrated light and dark modes powered by CSS custom properties and React context (`ThemeProvider`). Incorporates visual glassmorphism (`backdrop-filter`) with glowing border effects and sleek transitions.
-*   **📂 Fully JSON-Driven Content:** Zero-hardcoding layout where all portfolio data (personal bio, navigation, social links, education, experience, technologies, and projects) is kept strictly decoupled in standard JSON configuration files under `/src/data`.
-*   **🎬 Smooth Orchestrated Transitions:** Uses [Framer Motion](https://www.framer.com/motion/) for fluid page-shell transitions, element entries, responsive sidebar/navbar behavior, and interactive hover-glow states.
-*   **🧭 Modern Client-Side Routing:** Utilizes **React Router v7** for clean path-based navigation with full fallback handling.
+### 🌓 1. Theme-Aware Architecture & Dual-State Assets
+*   **Dual-Screenshot Engine:** Projects support responsive light and dark assets. Instead of static single image paths, they use theme-aware image objects:
+    ```json
+    "images": {
+      "light": "/src/data/images/projects/project-light.png",
+      "dark": "/src/data/images/projects/project-dark.png"
+    }
+    ```
+*   **Adaptive Theme Hook:** Safely resolves system preferences and manual toggles (`dark`, `light`, `system`) inside `ProjectCard.jsx` to render the correct screenshot seamlessly with soft animations.
+*   **Default Light Theme Engine:** Boots with an elegant, responsive light theme as the initial load-state, providing instant visual feedback.
+
+### 💻 2. Horizontal Showcase MacBook Cards (`ProjectCard.jsx`)
+*   **Horizontal Layout:** High-end horizontal split design on desktop (55% macOS-style MacBook preview, 45% contextual details) and stacks dynamically on mobile.
+*   **Virtual MacBook Frame:** Replaces plain image placeholders with an authentic macOS browser frame complete with micro-sized window controls (traffic lights) and custom title URLs reflecting project names.
+*   **Crisp Interaction Physics:** Implements tilt mechanics and subtle mouse-following hover-scale effects (e.g. `scale-102` on card, `scale-103` on image) designed to preserve HD visual assets without introducing raster/GPU blur artifacts.
+*   **Smart Tags & Metadata:** Displays a clean, uncluttered list showing the top 3 technology tags + `+N` indicator to maximize space efficiency, along with visual metadata labels (e.g. "Full Stack", "Personal Project").
+
+### 🎭 3. Premium Interactive Detail Modals (`ProjectModal.jsx`)
+*   **Backdrop Blur Mechanics:** Opens interactive overlay modals on card clicks. Uses `backdrop-blur-xl` combined with dynamic theme-aware background colors (`bg-black/60` on dark theme, `bg-black/20` on light theme) for depth.
+*   **Animated Entrance & Exit:** Utilizes Framer Motion's `AnimatePresence` for smooth exit transitions and choreographed stagger animations of content, lists, and badges.
+*   **Adaptive Glassmorphism:** Translucent designs built directly for light mode (milky white glass container, soft zinc borders, high contrast text) and dark mode (obsidian dark glass, custom borders).
+*   **Accessibility Controls:** Closes seamlessly via standard clicks, clicking outside the container boundary, a dedicated exit button, or by hitting the `Escape` (ESC) keyboard button.
+
+### ⏳ 4. Scroll-Linked Interactive Timeline (`Timeline.jsx` & `TimelineItem.jsx`)
+*   **Scroll-Progress Connector:** Employs Framer Motion's `useScroll` and `useTransform` to progressively draw the central vertical line dynamically as the user scrolls.
+*   **Viewport-Triggered Pulsing Nodes:** Dynamic circular timeline nodes pulse and reveal themselves using viewport entry intersection hooks.
+*   **Icon Mapping Architecture:** Maps JSON string-based types directly to react icons dynamically using a scalable lookup object:
+    ```javascript
+    const iconMap = {
+      graduation: GraduationCap,
+      briefcase: Briefcase,
+      award: Award,
+      rocket: Rocket
+    };
+    ```
+*   **Alternating Chronology:** Alternates layout alignment (left/right) on desktop screens, collapsing cleanly into a left-aligned vertical stack on mobile viewport sizes.
+
+### 📂 5. Decoupled JSON-Driven Logic
+*   **Zero-Hardcoding UI:** All layout sections, personal content, professional experiences, and projects are strictly isolated inside JSON configurations under `/src/data`. This allows instant personalization without altering component source files.
 
 ---
 
 ## 🛠️ Tech Stack & Dependencies
 
 *   **Core Framework:** [React 19](https://react.dev/) & [Vite](https://vite.dev/) (Module bundler & dev server)
-*   **Styling Engine:** [Tailwind CSS v4](https://tailwindcss.com/) with OKLCH Color Space
-*   **Animations:** [Framer Motion v12](https://www.framer.com/motion/)
-*   **WebGL Renderer:** [OGL v1](https://github.com/oogl/ogl) (WebGL utility library)
-*   **Router:** [React Router v7](https://reactrouter.com/)
-*   **Iconography:** [Lucide React](https://lucide.dev/) (High-quality vector icons)
+*   **Styling Engine:** [Tailwind CSS](https://tailwindcss.com/) with Custom OKLCH Theme Layers
+*   **Animations:** [Framer Motion](https://www.framer.com/motion/)
+*   **WebGL Particle System:** [OGL](https://github.com/oogl/ogl) (High-frequency, lightweight WebGL canvas simulation)
+*   **Icons:** [Lucide React](https://lucide.dev/) (High-performance vector SVG icon engine)
 
 ---
 
-## 📂 Project Structure
-
-Below is an annotated mapping of the codebase structure:
+## 📂 Codebase Directory Structure
 
 ```filepath
 React Portfolio/
-├── index.html                  # Main entry page structure and head metadata
+├── index.html                  # Core HTML structure & global head meta tags
 ├── package.json                # Project dependencies, devDependencies, and scripts
-├── vite.config.js              # Vite configuration (port 517, path aliases)
+├── vite.config.js              # Vite configuration (port 5173, path definitions)
 └── src/
-    ├── App.jsx                 # Application entry point with router paths and root layout
-    ├── main.jsx                # DOM mounting and initial React node setup
-    ├── styles.css              # Custom Tailwind CSS v4 themes, OKLCH systems, and global layer classes
-    ├── components/             # Reusable UI components
-    │   ├── AnimatedButton.jsx  # Framer-motion-enhanced interactive button
-    │   ├── Footer.jsx          # Site footer containing copyright and quick social links
-    │   ├── Navbar.jsx          # Glassmorphic, responsive navigation bar
-    │   ├── PageShell.jsx       # Transition wrapper for page-level animations
-    │   ├── ParticleBackground.js # Dynamic container mapping active paths to background colors
-    │   ├── Particles.jsx       # Raw WebGL OGL Canvas particle rendering engine
-    │   ├── ProjectCard.jsx     # Rich project card displaying badges, image, and Git/live links
-    │   ├── ScrollToTop.jsx     # Smooth window scroll helper button
-    │   ├── SectionDivider.jsx  # Elegant layout separator with linear glow lines
-    │   ├── SectionHeading.jsx  # Stylized typography header with background text gradients
-    │   ├── SocialLinks.jsx     # Renders active links to developer profiles
-    │   ├── TechnologyCard.jsx  # Grid card showcasing technology badges with hover glow effects
-    │   ├── ThemeProvider.jsx   # React Context supporting system-preferred / manual light-dark toggle
-    │   ├── ThemeToggle.jsx     # Interactive toggle button with spinning sun/moon indicators
-    │   └── TimelineCard.jsx    # Card structure mapping education/experience chronology
-    ├── data/                   # The portfolio data storage (No code changes required to change content)
-    │   ├── contact.json        # Contact email, address, phone, and form settings
-    │   ├── education.json      # Structured school credentials and achievements
-    │   ├── experience.json     # Professional timeline, responsibilities, and badges
-    │   ├── navigation.json     # Navbar routing configurations and paths
-    │   ├── personal.json       # Name, titles, branding texts, and main CTA values
-    │   ├── projects.json       # Project showcases, tag list, and GitHub repository references
-    │   ├── skills.json         # Generic skill categories and statistics
-    │   ├── socialLinks.json    # Links to GitHub, LinkedIn, Twitter, etc.
-    │   └── technologies.json   # Comprehensive list of technologies (SVGs, categories, brand colors)
+    ├── App.jsx                 # Application root shell, routing configurations, and page mount
+    ├── main.jsx                # DOM entry point & React root element mounting
+    ├── styles.css              # Custom Tailwind directives, global styling layers & variables
+    ├── components/             # Reusable UI component modules
+    │   ├── AnimatedButton.jsx  # Physics-based interactive hover button
+    │   ├── AvailabilityBadge.jsx # Dynamic pulsating "Available for hire" visual indicator
+    │   ├── CategoryTabs.jsx    # Tab-based filtering for skill boards
+    │   ├── Footer.jsx          # Site-wide footer with custom quick links
+    │   ├── HeroProfile.jsx     # Floating card layout for the home page intro profile
+    │   ├── HeroSection.jsx     # Hero landing section header containing bios and social widgets
+    │   ├── HeroStats.jsx       # Custom numeric statistics block on hero landing
+    │   ├── InfiniteTechCards.jsx # Endless looping horizontal marquee showcasing skill cards
+    │   ├── Navbar.jsx          # Glassmorphic responsive top navigation bar
+    │   ├── PageShell.jsx       # Fluid entrance transition container for page mounts
+    │   ├── ParticleBackground.jsx # Background controller applying section themes to Particles
+    │   ├── Particles.jsx       # WebGL OGL Canvas-based high-performance background particles
+    │   ├── ProjectCard.jsx     # Horizontal MacBook-framed project showcase card
+    │   ├── ProjectModal.jsx    # Theme-adaptive scroll-supporting detail overlay modal
+    │   ├── ScrollToTop.jsx     # Interactive window return-to-top component
+    │   ├── SectionDivider.jsx  # Glowing separating boundary line
+    │   ├── SectionHeading.jsx  # Dual-color text header with gradient accent glows
+    │   ├── SocialLinks.jsx     # Decoupled social icon routing dashboard
+    │   ├── TechCard.jsx        # Premium glowing detail card for technical capabilities
+    │   ├── TechnologyCard.jsx  # Standard grid badge card showing skill labels
+    │   ├── TechnologySection.jsx # Context-aware dashboard grouping skillset categories
+    │   ├── ThemeProvider.jsx   # Global Context provider managing active light/dark state
+    │   ├── ThemeToggle.jsx     # Sun/Moon interactive switcher icon with rotation
+    │   ├── Timeline.jsx        # Vertical scroll-progress timeline container component
+    │   ├── TimelineCard.jsx    # Chronological detail card layout
+    │   ├── TimelineItem.jsx    # Animated item mapping individual timeline JSON models
+    │   └── TypewriterRoles.jsx  # Custom automatic typing visual simulator
+    ├── data/                   # Decoupled static data files (Zero coding needed to update content)
+    │   ├── certifications.json  # Array models mapping credential name, organization, and badges
+    │   ├── contact.json        # Dynamic forms configurations and contact targets
+    │   ├── education.json      # School history data models
+    │   ├── experience.json     # Professional job roles data models
+    │   ├── hero.json           # Landing layout definitions, tags, and stats values
+    │   ├── navigation.json     # Navigation headers, links, and icons configurations
+    │   ├── personal.json       # Bios, names, and contact parameters
+    │   ├── projects.json       # Project titles, theme-aware dual screenshots, and code links
+    │   ├── skills.json         # Raw listing values for skill grids
+    │   ├── socialLinks.json    # Social media handles, active routes, and SVG definitions
+    │   ├── technologies.json   # Full list of technology components, titles, categories, and colors
+    │   └── timeline.json       # Standard source file feeding the scroll-linked Timeline component
     ├── hooks/
-    │   └── useActiveSection.js # Intersection Observer hook for tracking scroll context
-    └── pages/                  # Page-level route views
-        ├── Contact.jsx         # Contact me page with integrated messaging forms
-        ├── Experience.jsx      # Vertical interactive timeline view of work history
-        ├── Home.jsx            # Main interactive landing page combining page units
-        ├── Overview.jsx        # Concise visual introduction and bio details
-        ├── Projects.jsx        # Project grid overview page
-        └── Technologies.jsx    # Complete filtered tech-stack visualization dashboard
+    │   └── useActiveSection.js # Intersection Observer hook driving scroll navigation
+    └── pages/                  # Route level layout views
+        ├── Certifications.jsx  # Premium grid layout exhibiting certificates & licenses
+        ├── Contact.jsx         # Highly secure frontend contact card page
+        ├── Experience.jsx      # Scroll-progress timeline shell
+        ├── Home.jsx            # Integrated dashboard merging portfolio panels into a main page
+        ├── Overview.jsx        # Personal biography page with interactive profiles
+        ├── Projects.jsx        # Filterable showcases matching personal / team projects
+        └── Technologies.jsx    # Multi-tab modular skill and technology visualization board
 ```
 
 ---
 
-## ⚙️ Installation & Local Setup
+## ⚙️ Installation & Development Setup
 
-Get your development environment up and running in a few simple steps:
+Make sure you have [Node.js](https://nodejs.org/) version `18.x` or later installed on your system.
 
-### Prerequisites
-Make sure you have [Node.js](https://nodejs.org/) installed (version `18.x` or later is recommended).
-
-### 1. Clone & Navigate
+### 1. Clone & Enter the Workspace
 ```bash
 git clone <your-repository-url>
 cd "React Portfolio"
 ```
 
-### 2. Install Dependencies
+### 2. Install Development Dependencies
 ```bash
 npm install
 ```
 
-### 3. Start Development Server
+### 3. Spin Up Local Hot-Reload Server
 ```bash
 npm run dev
 ```
-The server will start, typically on port `517` (e.g., `http://localhost:517` or configured port from your `vite.config.js`).
+The application will launch on your local host (usually `http://localhost:5173` or configured ports).
 
 ---
 
-## 🎯 JSON Content Configuration
+## ⚡ Customizing Your Content (Decoupled JSON Editing)
 
-You do **not** need to touch React component code to update your profile data. Simply modify the JSON files inside `/src/data/`:
+To customize the entire developer portfolio to highlight your own professional brand, simply edit the JSON configurations inside `src/data/`:
 
-*   **`personal.json`**: Update your brand name, firstName, highlightName, job subtitle, and bios.
-*   **`technologies.json`**: Add, remove, or edit your programming languages, frameworks, or tools. You can change their brand color tags and point icons to custom SVG links:
+*   **Projects Showcase (`projects.json`):**
+    Ensure both light and dark screenshots are defined so the dual-state preview is optimized for user settings:
     ```json
     {
-      "name": "TypeScript",
-      "category": "Frontend",
-      "icon": "FileType2",
-      "color": "#3178C6",
-      "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+      "title": "My Premium Project",
+      "description": "An outstanding horizontal showcase web application.",
+      "images": {
+        "light": "/src/data/images/projects/project-light.png",
+        "dark": "/src/data/images/projects/project-dark.png"
+      },
+      "tags": ["React", "Tailwind", "Framer Motion"],
+      "github": "https://github.com/username/repo",
+      "demo": "https://demo.url",
+      "type": "Full Stack / Personal",
+      "contributions": [
+        "Architected modular state engine.",
+        "Engineered smooth responsive timelines."
+      ]
     }
     ```
-*   **`projects.json`**: Define your projects. List tags, short descriptions, image path, live demonstration link, and GitHub repository.
-*   **`experience.json` & `education.json`**: Maintain chronological details, dates, companies, roles, and major learnings.
+
+*   **Interactive Chronology (`timeline.json`):**
+    Maintain education and career positions dynamically. Provide an icon string that maps to the dynamic `iconMap` within `TimelineItem.jsx` (`graduation`, `briefcase`, `award`, or `rocket`):
+    ```json
+    {
+      "year": "2024 - Present",
+      "title": "Senior Solutions Engineer",
+      "organization": "Innovations Corp",
+      "description": "Lead developer for next-gen interactive web applications.",
+      "icon": "briefcase",
+      "tags": ["React", "Typescript", "System Architecture"],
+      "highlights": [
+        "Boosted core render speeds by 40% using canvas animations.",
+        "Modernized client systems using flexible component libraries."
+      ]
+    }
+    ```
 
 ---
 
-## 🎨 Theme & Styling System
-
-The application styling is written with **Tailwind CSS v4** inside `src/styles.css`. It features full **OKLCH** color values which allow higher brightness, better color-space interpolation, and dynamic themes.
-
-### Defining custom colors
-Custom design tokens are integrated within `@theme inline`:
-```css
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-cyan-glow: var(--cyan-glow);
-  --color-blue-glow: var(--blue-glow);
-  /* ... */
-}
-```
-
-### Theme Colors Mapping (OKLCH)
-Light and Dark variables are stored dynamically inside `:root` and `.dark` block layers:
-```css
-/* Dark theme overrides */
-.dark {
-  color-scheme: dark;
-  --background: oklch(0.05 0.015 240);
-  --foreground: oklch(0.98 0.005 240);
-  --primary: oklch(0.78 0.16 220);
-  /* ... */
-}
-```
-
-### Premium Glassmorphism Classes
-To achieve the premium look and feel, utility layers such as `.glass-card` and `.glow-hover` are available for global use:
-```css
-.glass-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-card);
-}
-```
-
-
 ## 📄 License
-This project is open-source and available under the [MIT License](LICENSE). Feel free to customize and use it to showcase your stellar developer credentials!
+
+This codebase is open-source and available under the [MIT License](LICENSE). Customize it, deploy it, and launch your premium, high-performance developer portfolio!
