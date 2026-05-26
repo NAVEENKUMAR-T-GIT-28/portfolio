@@ -13,6 +13,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import TechnologySection from "@/components/TechnologySection";
 import HeroProfile from "@/components/HeroProfile";
 import HeroSection from "@/components/HeroSection";
+import ResumeCard from "@/components/ResumeCard";
 
 /* ── Helpers ───────────────────────────────────────── */
 const ICON_MAP = { Github, Linkedin, Instagram, Mail };
@@ -250,6 +251,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── RESUME DOWNLOAD ── */}
+      <ResumeCard />
 
       {/* ── QUICK CONTACT CTA ── */}
       <section className="py-24 px-6" aria-labelledby="cta-heading">
