@@ -3,9 +3,9 @@
     "id": 1,
     "type": "education",
     "title": "SSLC (10th Standard)",
-    "subtitle": "St. Antony's Higher Secondary School",
+    "subtitle": "Veludaiyar Higher Secondary School, Thiruvarur",
     "date": "2021 - 2022",
-    "description": "Percentage: 83%",
+    "description": "Percentage: 95%",
     "points": [],
     "icon": "award",
     "technologies": []
@@ -15,9 +15,9 @@
     "id": 2,
     "type": "education",
     "title": "HSC (12th Standard)",
-    "subtitle": "St. Antony's Higher Secondary School",
-    "date": "2021 - 2023",
-    "description": "Percentage: 72%",
+    "subtitle": "Veludaiyar Higher Secondary School, Thiruvarur",
+    "date": "2023 - 2024",
+    "description": "Percentage: 87.33%",
     "points": [],
     "icon": "award",
     "technologies": []
@@ -28,7 +28,7 @@
     "title": "B.E. Computer and Communication Engineering",
     "subtitle": "Sri Sairam Institute of Technology",
     "date": "2024 - 2028",
-    "description": "Current CGPA: 8.7",
+    "description": "Current CGPA: 8.76",
     "points": [],
     "icon": "graduation",
     "technologies": []

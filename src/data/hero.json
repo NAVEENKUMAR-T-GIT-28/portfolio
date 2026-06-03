@@ -1,26 +1,36 @@
 {
   "name": "NAVEENKUMAR T",
-  "title": "2nd Year Computer and Communication Engineering Student",
+  "title": "B.E. Computer & Communication Engineering · Sri Sairam Institute of Technology",
   "roles": [
     "Full-Stack Developer",
-    "MERN Builder",
-    "Docker Learner",
-    "RHCSA Certified System Administrator"
+    "MERN Stack Developer",
+    "Linux & Docker Enthusiast",
+    "RHCSA Certified · 300/300"
   ],
   "availability": {
-    "status": "Available for Internships",
+    "status": "Open to Internship Opportunities",
     "active": true
   },
   "stats": [
     {
-      "icon": "🏢",
-      "value": "2+",
-      "label": "Internships"
+      "icon": "🎓",
+      "value": "8.76",
+      "label": "Current CGPA"
+    },
+    {
+      "icon": "💼",
+      "value": "2",
+      "label": "Internships Completed"
     },
     {
       "icon": "🔴",
-      "value": "RHCSA",
-      "label": "Red Hat Certified System Administrator"
+      "value": "300/300",
+      "label": "RHCSA Score"
+    },
+    {
+      "icon": "🚀",
+      "value": "3",
+      "label": "Projects Built"
     }
   ],
   "floatingTech": [

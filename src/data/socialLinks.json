@@ -1,6 +1,22 @@
 [
-  { "name": "GitHub", "icon": "Github", "url": "https://github.com/NAVEENKUMAR-T-GIT-28" },
-  { "name": "LinkedIn", "icon": "Linkedin", "url": "https://www.linkedin.com/in/naveenkumar-tech" },
-  { "name": "Instagram", "icon": "Instagram", "url": "https://instagram.com/itz_me_naveen_28/" },
-  { "name": "Email", "icon": "Mail", "url": "mailto:naveenkumarsnr28@gmail.com" }
+  {
+    "name": "GitHub",
+    "icon": "Github",
+    "url": "https://github.com/NAVEENKUMAR-T-GIT-28"
+  },
+  {
+    "name": "LinkedIn",
+    "icon": "Linkedin",
+    "url": "https://www.linkedin.com/in/naveenkumar-tech"
+  },
+  {
+    "name": "Instagram",
+    "icon": "Instagram",
+    "url": "https://instagram.com/itz_me_naveen_28/"
+  },
+  {
+    "name": "Email",
+    "icon": "Mail",
+    "url": "mailto:naveenkumarsnr28@gmail.com"
+  }
 ]
