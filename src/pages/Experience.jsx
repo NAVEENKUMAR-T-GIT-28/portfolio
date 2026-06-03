@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { PageShell } from "@/components/PageShell";
-import Timeline from "@/components/Timeline";
+import { PageShell } from "@/components/layout/PageShell";
+import Timeline from "@/components/timeline/Timeline";
 
 export default function ExperiencePage() {
   return (

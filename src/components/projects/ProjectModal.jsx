@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { X, ExternalLink, Github, Zap, CheckCircle2 } from "lucide-react";
-import { useTheme } from "@/components/ThemeProvider";
+import { useTheme } from "@/components/theme/ThemeProvider";
 
 export default function ProjectModal({ project, onClose }) {
   const { theme } = useTheme();

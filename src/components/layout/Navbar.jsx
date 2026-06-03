@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import personal from "@/data/personal.json";
 import navigation from "@/data/navigation.json";
 

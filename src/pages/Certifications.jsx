@@ -4,7 +4,7 @@ import {
   Award, Calendar, ExternalLink, CheckCircle2,
   BadgeCheck, Clock, X, ZoomIn
 } from "lucide-react";
-import { PageShell } from "@/components/PageShell";
+import { PageShell } from "@/components/layout/PageShell";
 import certifications from "@/data/certifications.json";
 
 const industry = certifications.filter(c => c.tier === "industry");

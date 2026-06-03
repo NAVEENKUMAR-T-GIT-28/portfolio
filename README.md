@@ -70,33 +70,48 @@ React Portfolio/
     ├── main.jsx                # DOM entry point & React root element mounting
     ├── styles.css              # Custom Tailwind directives, global styling layers & variables
     ├── components/             # Reusable UI component modules
-    │   ├── AnimatedButton.jsx  # Physics-based interactive hover button
-    │   ├── AvailabilityBadge.jsx # Dynamic pulsating "Available for hire" visual indicator
-    │   ├── CategoryTabs.jsx    # Tab-based filtering for skill boards
-    │   ├── Footer.jsx          # Site-wide footer with custom quick links
-    │   ├── HeroProfile.jsx     # Floating card layout for the home page intro profile
-    │   ├── HeroSection.jsx     # Hero landing section header containing bios and social widgets
-    │   ├── HeroStats.jsx       # Custom numeric statistics block on hero landing
-    │   ├── InfiniteTechCards.jsx # Endless looping horizontal marquee showcasing skill cards
-    │   ├── Navbar.jsx          # Glassmorphic responsive top navigation bar
-    │   ├── PageShell.jsx       # Fluid entrance transition container for page mounts
-    │   ├── ParticleBackground.jsx # Background controller applying section themes to Particles
-    │   ├── Particles.jsx       # WebGL OGL Canvas-based high-performance background particles
-    │   ├── ProjectCard.jsx     # Horizontal MacBook-framed project showcase card
-    │   ├── ProjectModal.jsx    # Theme-adaptive scroll-supporting detail overlay modal
-    │   ├── ScrollToTop.jsx     # Interactive window return-to-top component
-    │   ├── SectionDivider.jsx  # Glowing separating boundary line
-    │   ├── SectionHeading.jsx  # Dual-color text header with gradient accent glows
-    │   ├── SocialLinks.jsx     # Decoupled social icon routing dashboard
-    │   ├── TechCard.jsx        # Premium glowing detail card for technical capabilities
-    │   ├── TechnologyCard.jsx  # Standard grid badge card showing skill labels
-    │   ├── TechnologySection.jsx # Context-aware dashboard grouping skillset categories
-    │   ├── ThemeProvider.jsx   # Global Context provider managing active light/dark state
-    │   ├── ThemeToggle.jsx     # Sun/Moon interactive switcher icon with rotation
-    │   ├── Timeline.jsx        # Vertical scroll-progress timeline container component
-    │   ├── TimelineCard.jsx    # Chronological detail card layout
-    │   ├── TimelineItem.jsx    # Animated item mapping individual timeline JSON models
-    │   └── TypewriterRoles.jsx  # Custom automatic typing visual simulator
+    │   ├── hero/               # Landing section components
+    │   │   ├── index.js
+    │   │   ├── AvailabilityBadge.jsx
+    │   │   ├── HeroProfile.jsx
+    │   │   ├── HeroSection.jsx
+    │   │   ├── HeroStats.jsx
+    │   │   └── TypewriterRoles.jsx
+    │   ├── layout/             # Core layout elements
+    │   │   ├── index.js
+    │   │   ├── Footer.jsx
+    │   │   ├── Navbar.jsx
+    │   │   ├── PageShell.jsx
+    │   │   └── ScrollToTop.jsx
+    │   ├── projects/           # Showcase cards and modals for project displays
+    │   │   ├── index.js
+    │   │   ├── ProjectCard.jsx
+    │   │   └── ProjectModal.jsx
+    │   ├── technology/         # Tech stack grids, chips, and infinite marquees
+    │   │   ├── index.js
+    │   │   ├── CategoryTabs.jsx
+    │   │   ├── InfiniteTechCards.jsx
+    │   │   ├── TechCard.jsx
+    │   │   ├── TechnologyCard.jsx
+    │   │   └── TechnologySection.jsx
+    │   ├── theme/              # Context providers and toggle switches
+    │   │   ├── index.js
+    │   │   ├── ThemeProvider.jsx
+    │   │   └── ThemeToggle.jsx
+    │   ├── timeline/           # Scroll-progress chronology and detail cards
+    │   │   ├── index.js
+    │   │   ├── Timeline.jsx
+    │   │   ├── TimelineCard.jsx
+    │   │   └── TimelineItem.jsx
+    │   └── ui/                 # Reusable primitive elements
+    │       ├── index.js
+    │       ├── AnimatedButton.jsx
+    │       ├── ParticleBackground.jsx
+    │       ├── Particles.jsx
+    │       ├── ResumeCard.jsx
+    │       ├── SectionDivider.jsx
+    │       ├── SectionHeading.jsx
+    │       └── SocialLinks.jsx
     ├── data/                   # Decoupled static data files (Zero coding needed to update content)
     │   ├── certifications.json  # Array models mapping credential name, organization, and badges
     │   ├── contact.json        # Dynamic forms configurations and contact targets

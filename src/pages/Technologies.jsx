@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { PageShell } from "@/components/PageShell";
+import { PageShell } from "@/components/layout/PageShell";
 import technologies from "@/data/technologies.json";
 import { useState as useImgState } from "react";
 import * as Icons from "lucide-react";

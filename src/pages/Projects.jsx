@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { PageShell } from "@/components/PageShell";
+import { PageShell } from "@/components/layout/PageShell";
 import projects from "@/data/projects.json";
 
-import ProjectCard from "@/components/ProjectCard";
-import ProjectModal from "@/components/ProjectModal";
+import ProjectCard from "@/components/projects/ProjectCard";
+import ProjectModal from "@/components/projects/ProjectModal";
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState(null);

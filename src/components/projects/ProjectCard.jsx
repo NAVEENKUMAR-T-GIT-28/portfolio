@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, FolderKanban } from "lucide-react";
-import { useTheme } from "@/components/ThemeProvider";
+import { useTheme } from "@/components/theme/ThemeProvider";
 
 export default function ProjectCard({ project, index, onClick }) {
   const cardRef = useRef(null);

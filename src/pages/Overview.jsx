@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Sparkles, Code2, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { PageShell } from "@/components/PageShell";
+import { PageShell } from "@/components/layout/PageShell";
 import personal from "@/data/personal.json";
 import skills from "@/data/skills.json";
 

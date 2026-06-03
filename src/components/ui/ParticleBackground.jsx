@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { useTheme } from "./ThemeProvider";
+import { useTheme } from "@/components/theme/ThemeProvider";
 import Particles from "./Particles";
 
 export function ParticleBackground() {

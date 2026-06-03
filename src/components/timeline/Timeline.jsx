@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import TimelineItem from "@/components/TimelineItem";
+import TimelineItem from "./TimelineItem";
 import timelineData from "@/data/timeline.json";
 import educationData from "@/data/education.json";
 

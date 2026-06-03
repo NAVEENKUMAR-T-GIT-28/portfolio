@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import HeroProfile from "@/components/HeroProfile";
-import TypewriterRoles from "@/components/TypewriterRoles";
-import HeroStats from "@/components/HeroStats";
-import AvailabilityBadge from "@/components/AvailabilityBadge";
+import HeroProfile from "./HeroProfile";
+import TypewriterRoles from "./TypewriterRoles";
+import HeroStats from "./HeroStats";
+import AvailabilityBadge from "./AvailabilityBadge";
 import heroData from "@/data/hero.json";
 
 export default function HeroSection() {

@@ -13,7 +13,7 @@ export default function TechCard({ tech }) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: Math.random() * 0.3 }} // Pseudo-stagger for infinite scroll items
+      transition={{ duration: 0.5, delay: Math.random() * 0.3 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="relative flex flex-col p-5 glass-card rounded-2xl shrink-0 w-64 overflow-hidden transition-colors duration-300 hover:border-primary/50 hover:bg-primary/10 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] group"

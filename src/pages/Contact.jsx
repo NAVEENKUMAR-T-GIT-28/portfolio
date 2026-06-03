@@ -2,9 +2,9 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import * as Icons from "lucide-react";
-import { PageShell } from "@/components/PageShell";
-import { SectionHeading } from "@/components/SectionHeading";
-import { AnimatedButton } from "@/components/AnimatedButton";
+import { PageShell } from "@/components/layout/PageShell";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import contact from "@/data/contact.json";
 import socialLinks from "@/data/socialLinks.json";
 

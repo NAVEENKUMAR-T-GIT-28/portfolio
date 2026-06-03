@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { ThemeProvider } from "./components/ThemeProvider";
-import { ParticleBackground } from "./components/ParticleBackground";
-import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
+import { ThemeProvider } from "./components/theme/ThemeProvider";
+import { ParticleBackground } from "./components/ui/ParticleBackground";
+import { Navbar } from "./components/layout/Navbar";
+import { Footer } from "./components/layout/Footer";
 
 // Pages
 import Home from "./pages/Home";

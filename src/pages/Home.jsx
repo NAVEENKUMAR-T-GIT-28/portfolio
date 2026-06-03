@@ -9,11 +9,11 @@ import projects from "@/data/projects.json";
 import experience from "@/data/experience.json";
 import technologies from "@/data/technologies.json";
 import socialLinks from "@/data/socialLinks.json";
-import { ScrollToTop } from "@/components/ScrollToTop";
-import TechnologySection from "@/components/TechnologySection";
-import HeroProfile from "@/components/HeroProfile";
-import HeroSection from "@/components/HeroSection";
-import ResumeCard from "@/components/ResumeCard";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
+import TechnologySection from "@/components/technology/TechnologySection";
+import HeroProfile from "@/components/hero/HeroProfile";
+import HeroSection from "@/components/hero/HeroSection";
+import ResumeCard from "@/components/ui/ResumeCard";
 
 /* ── Helpers ───────────────────────────────────────── */
 const ICON_MAP = { Github, Linkedin, Instagram, Mail };
