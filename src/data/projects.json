@@ -106,10 +106,10 @@
   {
     "id": 4,
     "title": "Flappy Bird"  ,
-    "tagline": "Classic arcade game recreated in Unit y",
-    "description": "A Flappy Bird clone built with Unity 6 and C#, featuring physics-based movement, procedural obstacle spawning, score tracking, and game-over manageme nt.",
+    "tagline": "Classic arcade game recreated in Unity",
+    "description": "A Flappy Bird clone built with Unity 6 and C#, featuring physics-based movement, procedural obstacle spawning, score tracking, and game-over management.",
     "overview": "Flappy Bird is a recreation of the popular arcade game developed using Unity 6 and C#. The project focuses on core game development concepts including Rigidbody physics, collision detection, obstacle generation, trigger-based scoring, UI management, and scene reloading. Players must navigate through continuously spawning pillars while achieving the highest possible score.",
-      "images": {
+    "images": {
       "light": "/images/projects/flappy-bird-light.png",
       "dark": "/images/projects/flappy-bird-dark.png"
     },
