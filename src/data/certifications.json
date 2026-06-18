@@ -81,5 +81,116 @@
     "skills": ["Java", "Object-Oriented Programming", "Data Structures", "Exception Handling", "Collections Framework"],
     "badge": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
     "image": "/images/certifications/nptel/programming-in-java.png"
+  },
+  {
+    "id": 6,
+    "tier": "other",
+    "title": "Introduction to Data Science",
+    "issuer": "Cisco Networking Academy",
+    "issuerShort": "Cisco",
+    "date": "Dec 2024",
+    "status": "completed",
+    "description": "Completed foundational training in data analytics, AI, machine learning, and data science career pathways.",
+    "skills": [
+      "Data Science",
+      "Data Analytics",
+      "Machine Learning",
+      "Artificial Intelligence"
+    ],
+    "badge": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "image": "/images/certifications/cisco/introduction-to-data-science.png"
+  },
+  {
+    "id": 7,
+    "tier": "other",
+    "title": "Networking Basics",
+    "issuer": "Cisco Networking Academy",
+    "issuerShort": "Cisco",
+    "date": "Dec 2024",
+    "status": "completed",
+    "description": "Learned networking fundamentals including IP addressing, routing, protocols, wireless networks, and troubleshooting.",
+    "skills": [
+      "Computer Networks",
+      "TCP/IP",
+      "IPv4",
+      "IPv6",
+      "Routing"
+    ],
+    "badge": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg",
+    "image": "/images/certifications/cisco/networking-basics.png"
+  },
+  {
+    "id": 8,
+    "tier": "other",
+    "title": "Python Essentials 1",
+    "issuer": "Cisco Networking Academy · OpenEDG Python Institute",
+    "issuerShort": "Cisco",
+    "date": "Dec 2024",
+    "status": "completed",
+    "description": "Covered Python programming fundamentals, problem-solving, scripting, debugging, and standard library usage.",
+    "skills": [
+      "Python",
+      "Programming",
+      "Debugging",
+      "Problem Solving"
+    ],
+    "badge": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "image": "/images/certifications/cisco/python-essentials-1.png"
+  },
+  {
+    "id": 9,
+    "tier": "other",
+    "title": "Python Essentials 2",
+    "issuer": "Cisco Networking Academy · OpenEDG Python Institute",
+    "issuerShort": "Cisco",
+    "date": "Dec 2024",
+    "status": "completed",
+    "description": "Advanced Python course covering OOP, modular programming, real-world applications, and software development practices.",
+    "skills": [
+      "Python",
+      "OOP",
+      "Software Development",
+      "Modules"
+    ],
+    "badge": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "image": "/images/certifications/cisco/python-essentials-2.png"
+  },
+  {
+    "id": 10,
+    "tier": "other",
+    "title": "Data Analytics Essentials",
+    "issuer": "Cisco Networking Academy",
+    "issuerShort": "Cisco",
+    "date": "Dec 2024",
+    "status": "completed",
+    "description": "Learned data analytics workflows, data preparation, visualization, SQL, Excel, and Tableau fundamentals.",
+    "skills": [
+      "Data Analytics",
+      "SQL",
+      "Excel",
+      "Tableau",
+      "Data Visualization"
+    ],
+    "badge": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    "image": "/images/certifications/cisco/data-analytics-essentials.png"
+  },
+  {
+    "id": 11,
+    "tier": "other",
+    "title": "Introduction to Modern AI",
+    "issuer": "Cisco Networking Academy",
+    "issuerShort": "Cisco",
+    "date": "Dec 2024",
+    "status": "completed",
+    "description": "Explored AI fundamentals, machine learning, large language models, prompt engineering, chatbots, and generative AI applications.",
+    "skills": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "LLMs",
+      "Prompt Engineering",
+      "Generative AI"
+    ],
+    "badge": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+    "image": "/images/certifications/cisco/introduction-to-modern-ai.png"
   }
 ]
