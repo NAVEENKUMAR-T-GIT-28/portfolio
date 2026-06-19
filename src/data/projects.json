@@ -148,8 +148,8 @@
     "description": "A 3D endless runner game featuring lane-based movement, obstacle avoidance, score tracking, game-over mechanics, and responsive UI systems.",
     "overview": "Cube Runner is a 3D endless runner game developed in Unity 6 using C#. Players control a cube that continuously moves forward while avoiding colored obstacles and navigating through increasingly challenging paths. The project focuses on game mechanics, collision systems, UI management, scene control, score tracking, and player movement using Unity's physics engine. It also includes start menus, game-over screens, restart functionality, camera follow systems, and modular obstacle design using prefabs.",
     "images": {
-      "light": "/images/projects/cube-runner-light.png",
-      "dark": "/images/projects/cube-runner-dark.png"
+      "light": "/images/projects/cube-runner.png",
+      "dark": "/images/projects/cube-runner.png"
     },
     "tech": ["Unity", "C#"],
     "techStack": [
